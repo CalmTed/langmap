@@ -1,0 +1,34 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.card {
+  padding: 2em;
+  box-shadow: 0 0 3px var(--bg-dark);
+  border-radius: 4px;
+}
+
+.taskItem{
+  background: var(--bg-light);
+    margin-bottom: 20px;
+}
+.taskTitle{
+  text-align: start;
+  font-size: 120%;
+}
+.taskOptionsList{
+  display: flex;
+  padding-top: 1em;
+  gap: 0.5em;
+}
+.taskOption.selected{
+  background-color: var(--fifth-color)
+}
+
+
+.resultQuestion.right{
+  background-color: var(--second-color);
+}

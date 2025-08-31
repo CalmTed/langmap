@@ -1,0 +1,20 @@
+2025-08-31
+- 1300 added basic pages
+- plan MVP
+    - [x] add models and constants
+    - [x] add state manamenemt
+    - [x] add page management with hash
+    - [x] add topics data
+        - [x] add A1 with 3 question each
+    - [x] add pages contents and buttons for routung
+        - [x] test now > start > finish | cancel > show map > test again
+    - [ ] add testing page functions (progress, states: ready| inprogress| finished, duration)
+    - [ ] add finishing page (add name, save results)
+    - [ ] show results
+        - [ ] show answers list (right|wrong colors)
+        - [ ] generate map for all tests by name
+            - [ ] and show metadata: date, duration, questions correct / total tested
+- 1332 added mmodels ann constants
+- 1526 added state management and page navigator
+- 1635 added question data for A1(30 topics, 90 questions) and A2(50 topics 150 questions)
+- 2007 add basic testing page
