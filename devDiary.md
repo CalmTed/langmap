@@ -18,3 +18,6 @@
 - 1526 added state management and page navigator
 - 1635 added question data for A1(30 topics, 90 questions) and A2(50 topics 150 questions)
 - 2007 add basic testing page
+2025-09-01
+- added canvas manipulation
+- need smth like metter.js, paper.js what i was looking for

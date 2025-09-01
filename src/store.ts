@@ -15,10 +15,13 @@ const initialState: AppState = {
     testingStartTime: 0,
     selectedName: undefined
 }
+const existingState = localStorage.getItem("store")
+console.log(existingState)
+
 
 const generalSlice = createSlice({
     name: "general",
-    initialState,
+    initialState: existingState !== null ? JSON.parse(existingState) : initialState,
     reducers: {
         setInterfaceLang: (state, action: PayloadAction<INTERFACE_LANG>) => {
             state.interfaceLang = action.payload;
@@ -35,11 +38,11 @@ const generalSlice = createSlice({
             }
             state.lastUpdate = new Date().getTime();
         },
-        updateTask: (state, action: PayloadAction<{ taskUUID: string, answerUUID: string }>) => {
+        updateTask: (state: AppState, action: PayloadAction<{ taskUUID: string, answerUUID: string }>) => {
             state.activeTasks = state.activeTasks.map(t => t.uuid === action.payload.taskUUID ? { ...t, answerUUID: action.payload.answerUUID, answerTime: new Date().getTime() } as TaskModel : t)
             state.lastUpdate = new Date().getTime();
         },
-        submitResults: (state, action: PayloadAction<string>) => {
+        submitResults: (state: AppState, action: PayloadAction<string>) => {
             const results: ResultsModel = {
                 uuid: uuidv4(),
                 name: action.payload,
@@ -59,7 +62,7 @@ const generalSlice = createSlice({
             state.selectedName = action.payload;
             state.testingStartTime = 0;
             state.lastUpdate = new Date().getTime();
-        }
+        },
     }
 })
 
@@ -70,6 +73,12 @@ export const store = configureStore({
         general: generalReducer
     }
 })
+
+store.subscribe(() => {
+    const state = store.getState();
+    console.log("State after dispatch:", state);
+    localStorage.setItem("store", JSON.stringify(state.general))
+});
 
 export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch

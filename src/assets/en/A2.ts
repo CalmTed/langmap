@@ -1,5 +1,5 @@
-import { LANG_LEVEL } from "../constants";
-import type { TopicModel } from "../models";
+import { LANG_LEVEL } from "../../constants";
+import type { TopicModel } from "../../models";
 
 export const A2Topics: TopicModel[] = [{
     uuid: "fb00d2a1-6054-4838-8d96-ac2ee7cf7c93", level: LANG_LEVEL.A2, title: "Present Simple vs. Present Continuous", description: "", questions: [{ uuid: "6ddf252b-56bb-431a-8b7f-b273072f90e8", topicUUID: "fb00d2a1-6054-4838-8d96-ac2ee7cf7c93", title: "Which sentence is Present Simple?", level: LANG_LEVEL.A2, expectedTimeSec: 45, options: [{ uuid: "774e9a45-e8fa-4694-b0cd-53b0173b75e8", text: "I play football every day." }, { uuid: "d908a3f2-16a3-4125-b304-0349755d4c5c", text: "I am playing football now." }, { uuid: "901d0e41-79c0-43f3-8e11-f34ed98f8de8", text: "I will play football." }] },

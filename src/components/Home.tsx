@@ -10,13 +10,14 @@
 // privacy policy - will analitics send data for stats????
 
 import { useEffect, useState } from "react";
-import { A1Topics } from "../assets/A1";
-import { A2Topics } from "../assets/A2";
 import { LANG_LEVEL, PAGE } from "../constants"
 import { go } from "../go";
 import type { QuestionModel, TaskModel, TopicModel } from "../models";
 import { selectState, setTasks, useAppDispatch, useAppSelector } from "../store";
 import { uuidv4 } from "../uuid";
+import { questionsEN } from "../assets/en";
+import { A1Topics } from "../assets/en/A1";
+import { A2Topics } from "../assets/en/A2";
 
 export const HomePage = () => {
     const state = useAppSelector(selectState)
@@ -47,7 +48,7 @@ export const HomePage = () => {
         }
     }, [])
 
-    const allQuestions:QuestionModel[] = [...A1Topics, ...A2Topics].map(t => t.questions).flat()
+    const allQuestions:QuestionModel[] = questionsEN;
     const rightLevelTopics:TopicModel[] = [
         ...(levelRange.includes(LANG_LEVEL.A1) ? A1Topics : []),
         ...(levelRange.includes(LANG_LEVEL.A2) ? A2Topics : []),

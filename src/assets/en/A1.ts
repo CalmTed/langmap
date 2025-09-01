@@ -1,5 +1,5 @@
-import { LANG_LEVEL } from "../constants";
-import type { TopicModel } from "../models";
+import { LANG_LEVEL } from "../../constants";
+import type { TopicModel } from "../../models";
 
 export const A1Topics: TopicModel[] = [
     {

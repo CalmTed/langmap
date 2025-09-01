@@ -58,3 +58,9 @@ export interface ResultQuestionModel{
     answerUUID: string,
     timeOfAnswer: number,
 }
+
+export type MapData = {
+    topicUUID: string,
+    lanquageLevel: LANG_LEVEL,
+    correctness: number, //-1 > 0 > 1
+}
